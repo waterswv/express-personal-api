@@ -1,10 +1,12 @@
-// var mongoose = require('mongoose'),
-//   Schema = mongoose.Schema;
+var mongoose = require('mongoose'),
+  Schema = mongoose.Schema;
 
-// var QuotesSchema = new Schema({
-//   description: String
-// });
+var QuoteSchema = new Schema({
+  quote: String,
+  author: String,
+  year: Number
+});
 
-// var Campsite = mongoose.model('Campsite', CampsiteSchema);
+var Quote = mongoose.model('Quote', QuoteSchema);
 
-// module.exports = Campsite;
+module.exports = Quote;
