@@ -54,10 +54,11 @@ app.get('/api', function apiIndex(req, res) {
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
       {method: "GET", path: "/api/profile", description: "Bryan's Profile "}, // changed you
-      {method: "POST", path: "/api/quotes", description: "Add to the collection of my favorite quotes"}, // changed you
-      {method: "PUT", path: "/api/quotes/:id", description: "Updates a document by ID"},
-      {method: "GET", path: "/api/quotes/:id", description: "Retrieves a document by ID "},
-      {method: "DELETE", path: "/api/quotes/:id", description: "Deletes a document by ID"}
+      {method: "GET", path: "/api/quote", description: "Retrieves a collection of my favorite quotes"},
+      {method: "POST", path: "/api/quote", description: "Add to the collection of my favorite quotes"}, // changed you
+      {method: "PUT", path: "/api/quote/:id", description: "Updates a document in my quote collection by ID"},
+      {method: "GET", path: "/api/quote/:id", description: "Retrieves a document in my quote collection by ID "},
+      {method: "DELETE", path: "/api/quote/:id", description: "Deletes a document in my quote collection by ID"}
     ]
   })
 });
@@ -84,6 +85,7 @@ app.get('/api/profile', function apiIndex(req, res) {
   })
 });
 
+app.post('/api/quote')
 /**********
  * SERVER *
  **********/
