@@ -47,14 +47,39 @@ app.get('/api', function apiIndex(req, res) {
   // It would be seriously overkill to save any of this to your database.
   // But you should change almost every line of this response.
   res.json({
-    woopsIForgotToDocumentAllMyEndpoints: true, // CHANGE ME ;)
+    didIFailToCompleteThis: false, // made you false ;)
     message: "This Documentation contains the profile of github user waterswv",
     documentationUrl: "https://github.com/waterswv/express-personal-api/blob/master/README.md", // changed you
     baseUrl: "https://young-peak-15905.herokuapp.com/", // changed you
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
       {method: "GET", path: "/api/profile", description: "Bryan's Profile "}, // changed you
-      {method: "POST", path: "/api/quotes", description: "Add to the collection of my favorite quotes"} // changed you
+      {method: "POST", path: "/api/quotes", description: "Add to the collection of my favorite quotes"}, // changed you
+      {method: "PUT", path: "/api/quotes/:id", description: "Updates a document by ID"},
+      {method: "GET", path: "/api/quotes/:id", description: "Retrieves a document by ID "},
+      {method: "DELETE", path: "/api/quotes/:id", description: "Deletes a document by ID"}
+    ]
+  })
+});
+
+app.get('/api/profile', function apiIndex(req, res) {
+  // TODO: Document all your api endpoints below as a simple hardcoded JSON object.
+  // It would be seriously overkill to save any of this to your database.
+  // But you should change almost every line of this response.
+  res.json({
+
+    message: "This endpoint contains my profile data: details about how to contact me & my GA project repos",
+    documentationUrl: "https://github.com/waterswv/waterswv.github.io/blob/master/README.md", // Personal Page Repo Readme
+    baseUrl: "https://waterswv.github.io/", // my hosted personal page URL
+    urls: [
+      {name: "LinkedIn", path: "https://www.linkedin.com/in/bryanmierke", description: "This is my LinkedIn page"},
+      {name: "Twitter", path: "https://twitter.com/bryanmierke", description: "This is my Twitter page"},
+      {name: "GitHub", path: "https://github.com/waterswv", description: "This is my GitHub page"},
+      {name: "Personal Site Repo", path: "https://github.com/waterswv/waterswv.github.io", description: "This is my Personal site repo"},
+      {name: "Project 0 Repo", path: "https://waterswv.github.io/project-0/", description: "This is my Racecar game repo"},
+      {name: "Test Driven API Repo", path: "https://github.com/waterswv/test-driven-todo-api", description: "This is my test-driven-todo-api repo"},
+      {name: "GeoQuakes API", path: "https://github.com/waterswv/geoquakes", description: "This is my geoquakes repo with Google Maps integration"},
+
     ]
   })
 });

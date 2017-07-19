@@ -1,7 +1,7 @@
 // var mongoose = require('mongoose'),
 //   Schema = mongoose.Schema;
 
-// var CampsiteSchema = new Schema({
+// var QuotesSchema = new Schema({
 //   description: String
 // });
 
