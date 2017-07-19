@@ -204,10 +204,25 @@ app.get('/api/quote/:id', function(req, res) {
 
 app.put('/api/quote/:id', function(req, res) {
   // Post code here
+  db.Quote.findOne({_id: req.params.id}, function (err, myQuote){
+    if(err){
+      console.log("Error finding ID", err);
+    }
+
+    myQuote.quote = req.body.quote;
+    myQuote.author = req.body.author;
+    myQuote.year = req.body.year;
+    myQuote.save();
+    res.json(myQuote);
+
+  });
 });
 
 app.delete('/api/quote/:id', function(req, res) {
   // Post code here
+  db.Quote.findOneAndRemove({ _id: req.params.id }, function (err, deletedQuote) {
+    res.json(deletedQuote);
+  });
 });
 
 /**********
