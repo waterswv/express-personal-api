@@ -103,7 +103,10 @@ app.get('/api/profile', function apiIndex(req, res) {
 app.get('/api/quote', function (req, res){
   // Post code here
   // var theData = req.quoteData;
-  res.json(db.quoteData);
+  db.Quote.find({}, function(err, quotes){
+    if (err){return console.log(err)}
+    res.json(quotes);
+  })
 
 });
 
@@ -114,6 +117,14 @@ app.post('/api/quote', function (req, res){
     author: req.body.author,
     year: req.body.year
   });
+  console.log('newQuote should be stored here', newQuote)
+  newQuote.save(function (err, quote){
+    if (err){return console.log(err)}
+
+    res.json(quote)
+  });
+
+
 });
 
 app.get('/api/quote/:id', function (req, res){
