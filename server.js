@@ -19,7 +19,22 @@ app.use(function(req, res, next) {
  * DATABASE *
  ************/
 
-// var db = require('./models');
+var db = require('./models');
+
+// TEST DATA
+
+var quoteData = [
+  {
+    quote: "And that government of the people, by the people, for the people, shall not perish from this earth",
+    author: "Abraham Lincoln",
+    year: 1863
+  },
+  {
+    quote: "What is past is prologue",
+    author: "William Shakespeare",
+    year: 1610
+  }
+]
 
 /**********
  * ROUTES *
@@ -85,7 +100,34 @@ app.get('/api/profile', function apiIndex(req, res) {
   })
 });
 
-app.post('/api/quote')
+app.get('/api/quote', function (req, res){
+  // Post code here
+  // var theData = req.quoteData;
+  res.json(db.quoteData);
+
+});
+
+app.post('/api/quote', function (req, res){
+  // Post code here
+  var newQuote = new db.Quote({
+    quote: req.body.quote,
+    author: req.body.author,
+    year: req.body.year
+  });
+});
+
+app.get('/api/quote/:id', function (req, res){
+  // Post code here
+});
+
+app.put('/api/quote/:id', function (req, res){
+  // Post code here
+});
+
+app.delete('/api/quote/:id', function (req, res){
+  // Post code here
+});
+
 /**********
  * SERVER *
  **********/
