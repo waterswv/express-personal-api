@@ -48,13 +48,13 @@ app.get('/api', function apiIndex(req, res) {
   // But you should change almost every line of this response.
   res.json({
     woopsIForgotToDocumentAllMyEndpoints: true, // CHANGE ME ;)
-    message: "Welcome to my personal api! Here's what you need to know!",
-    documentationUrl: "https://github.com/example-username/express-personal-api/README.md", // CHANGE ME
-    baseUrl: "http://YOUR-APP-NAME.herokuapp.com", // CHANGE ME
+    message: "This Documentation contains the profile of github user waterswv",
+    documentationUrl: "https://github.com/waterswv/express-personal-api/blob/master/README.md", // changed you
+    baseUrl: "https://young-peak-15905.herokuapp.com/", // changed you
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/profile", description: "Data about me"}, // CHANGE ME
-      {method: "POST", path: "/api/campsites", description: "E.g. Create a new campsite"} // CHANGE ME
+      {method: "GET", path: "/api/profile", description: "Bryan's Profile "}, // changed you
+      {method: "POST", path: "/api/quotes", description: "Add to the collection of my favorite quotes"} // changed you
     ]
   })
 });
@@ -65,5 +65,5 @@ app.get('/api', function apiIndex(req, res) {
 
 // listen on the port that Heroku prescribes (process.env.PORT) OR port 3000
 app.listen(process.env.PORT || 3000, function () {
-  console.log('Express server is up and running on http://localhost:3000/');
+console.log('Express server is up and running on http://localhost:3000/');
 });
