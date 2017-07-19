@@ -115,7 +115,21 @@ app.get('/api/profile', function apiIndex(req, res) {
     message: "This endpoint contains my profile data: details about how to contact me & my GA project repos",
     documentationUrl: "https://github.com/waterswv/waterswv.github.io/blob/master/README.md", // Personal Page Repo Readme
     baseUrl: "https://waterswv.github.io/", // my hosted personal page URL
-    urls: [{
+    data: [{
+        name: "My first name",
+        path: "Bryan",
+        description: "My first name"
+      },
+      {
+        name: "My GitHub username",
+        path: "waterswv",
+        description: "My GitHub username"
+      },
+      {
+        name: "San Francisco",
+        description: "My current home location"
+      },
+      {
         name: "LinkedIn",
         path: "https://www.linkedin.com/in/bryanmierke",
         description: "This is my LinkedIn page"
@@ -150,6 +164,11 @@ app.get('/api/profile', function apiIndex(req, res) {
         path: "https://github.com/waterswv/geoquakes",
         description: "This is my geoquakes repo with Google Maps integration"
       },
+      {
+        name: "GitHub Profile Image",
+        path: "https://avatars3.githubusercontent.com/u/8486789?v=4&u=61d07b2c97a69d17be136998d831e658ae077a11&s=400",
+        description: "The picture used on my GitHub Account currently"
+      }
 
     ]
   })
